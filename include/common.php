@@ -13,6 +13,7 @@ header('Content-type:text/html;charset=utf-8');
 echo '你还没安装！<a href="install/">点此安装</a>';
 exit();
 }
+include_once(SYSTEM_ROOT . "hook_plugin.php");
 include_once(SYSTEM_ROOT."db.class.php");
 $DB=new DB($dbconfig['host'],$dbconfig['user'],$dbconfig['pwd'],$dbconfig['dbname'],$dbconfig['port']);
 $rs= $DB->query("SELECT * FROM `lylme_config`");
